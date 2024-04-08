@@ -14,3 +14,11 @@ def int_operations_benchmark():
     for _ in range(5000000000):
         b *= 2
         b %= 2147483647  # Keep it within the 32-bit integer range
+    # 2 x 10^9 divisions
+    c = 10000000000
+    for _ in range(2000000000):
+        c //= 2
+    end_time = time.time()
+    total_time = end_time - start_time
+    print(f"32-bit Integer Operation Benchmark: {total_time:.2f} seconds")
+
