@@ -77,3 +77,10 @@ def hard_drive_benchmark(file_path, file_size, block_size):
     os.remove(file_path)  # Clean up the file
     total_time = end_time - start_time
     print(f"Hard Drive Benchmark ({block_size} bytes per op): {total_time:.2f} seconds")
+
+if __name__ == "__main__":
+    int_operations_benchmark()
+    float_operations_benchmark()
+    memory_benchmark()
+    hard_drive_benchmark("testfile1.bin", 1000000000, 100)  # 100 bytes per operation
+    hard_drive_benchmark("testfile2.bin", 1000000000, 10000)  # 10000 bytes per operation
