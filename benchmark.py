@@ -40,3 +40,13 @@ def float_operations_benchmark():
     end_time = time.time()
     total_time = end_time - start_time
     print(f"64-bit Floating Point Operation Benchmark: {total_time:.2f} seconds")
+
+def memory_benchmark():
+    print("Starting memory operations...")
+    n = 5000000000
+    array = np.zeros(n, dtype=np.uint8)
+    start_time = time.time()
+    # Reading from array
+    sum = 0
+    for i in range(n):
+        sum += array[i]
