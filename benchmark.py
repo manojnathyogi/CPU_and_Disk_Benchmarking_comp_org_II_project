@@ -56,3 +56,10 @@ def memory_benchmark():
     end_time = time.time()
     total_time = end_time - start_time
     print(f"Memory Benchmark: {total_time:.2f} seconds")
+
+def hard_drive_benchmark(file_path, file_size, block_size):
+    print(f"Starting hard drive benchmark with block size {block_size}...")
+    # Create a test file
+    with open(file_path, "wb") as f:
+        f.write(os.urandom(file_size))
+    start_time = time.time()
