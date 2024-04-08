@@ -29,3 +29,14 @@ def float_operations_benchmark():
     a = 1.0
     for _ in range(1010):
         a += 1.0
+    # 5 x 10^9 multiplications
+    b = 1.0
+    for _ in range(5000000000):
+        b *= 1.0000001  # Small multiplication to avoid infinity
+    # 2 x 10^9 divisions
+    c = 1e10
+    for _ in range(2000000000):
+        c /= 2.0
+    end_time = time.time()
+    total_time = end_time - start_time
+    print(f"64-bit Floating Point Operation Benchmark: {total_time:.2f} seconds")
