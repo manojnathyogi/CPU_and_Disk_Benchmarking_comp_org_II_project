@@ -22,3 +22,10 @@ def int_operations_benchmark():
     total_time = end_time - start_time
     print(f"32-bit Integer Operation Benchmark: {total_time:.2f} seconds")
 
+def float_operations_benchmark():
+    print("Starting 64-bit floating point operations...")
+    start_time = time.time()
+    # 1010 additions
+    a = 1.0
+    for _ in range(1010):
+        a += 1.0
