@@ -63,3 +63,13 @@ def hard_drive_benchmark(file_path, file_size, block_size):
     with open(file_path, "wb") as f:
         f.write(os.urandom(file_size))
     start_time = time.time()
+    # Read the file
+    with open(file_path, "rb") as f:
+        while True:
+            data = f.read(block_size)
+            if not data:
+                break
+    # Write to the file
+    with open(file_path, "wb") as f:
+        for _ in range(file_size // block_size):
+            f.write(os.urandom(block_size))
