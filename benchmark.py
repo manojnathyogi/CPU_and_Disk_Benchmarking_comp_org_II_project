@@ -73,3 +73,7 @@ def hard_drive_benchmark(file_path, file_size, block_size):
     with open(file_path, "wb") as f:
         for _ in range(file_size // block_size):
             f.write(os.urandom(block_size))
+    end_time = time.time()
+    os.remove(file_path)  # Clean up the file
+    total_time = end_time - start_time
+    print(f"Hard Drive Benchmark ({block_size} bytes per op): {total_time:.2f} seconds")
